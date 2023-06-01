@@ -1,0 +1,8 @@
+#!/bin/bash
+yum update -y
+yum upgrade -y
+yum install httpd -y
+yum install mariadb105 -y
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Welcome To The Web Server: $(hostname -f)</h1>" > /var/www/html/index.html
